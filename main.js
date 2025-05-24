@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "Discipline is choosing between what you want now and what you want most.",
     "A little progress each day adds up to big results.",
     "Focus on being productive, not busy.",
-    "You don't need to be perfect, just consistent.",
+    "You don’t need to be perfect, just consistent.",
     "Small steps every day lead to lasting change."
   ];
 
@@ -23,17 +23,16 @@ document.addEventListener("DOMContentLoaded", function () {
       <ul id="taskList"></ul>
     </div>
   `;
+
+  window.addTask = function () {
+    const input = document.getElementById("taskInput");
+    const taskText = input.value.trim();
+    if (!taskText) return;
+
+    const li = document.createElement("li");
+    li.textContent = taskText;
+    document.getElementById("taskList").appendChild(li);
+    input.value = "";
+  };
 });
 
-function addTask() {
-  const input = document.getElementById("taskInput");
-  const taskText = input.value.trim();
-  if (!taskText) return;
-
-  const taskList = document.getElementById("taskList");
-  const li = document.createElement("li");
-  li.textContent = taskText;
-  taskList.appendChild(li);
-
-  input.value = "";
-}
